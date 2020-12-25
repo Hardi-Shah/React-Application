@@ -30,54 +30,56 @@ import HoverCounter from './components/HoverCounter';
 import { Component } from 'react';
 import ComponentC from './components/ComponentC';
 import { UserProvider } from './components/userContext';
-import {PostList} from './components/PostList';
+import { PostList } from './components/PostList';
 import { PostForm } from './components/PostForm';
+import HookCounter from './hooks/HookCounter';
 
 function App() {
   return (
     <div className="App">
-      <Greet name="abc">
+      {/* <Greet name="abc">
         <p>Greet tag</p>
       </Greet>
       <Welcome name="abc" />
-      {/* <Hello />
-        <Message/>
-        <Counter/> */}
-      {/* <FunctionClick/>
-        <ClassClick/>
-        <EventBind/> */}
-      {/* <ParentComponent/>
-        <UserGreeting/>
-        <NameList/>
-        <StyleSheet primary={true}/>
-        <Inline/> */}
-      {/* <h1 className='error'>Error</h1>
-        <h1 className={styles.success}>Success</h1> */}
-      {/* <Form/> */}
-      {/* <LifeCycleA/> */}
-      {/* <FragmentDemo/> */}
-      {/* <Table/> */}
-      {/* <ParentComp/> */}
-      {/* <RefsDemo/> */}
+      <Hello />
+      <Message />
+      <Counter />
+      <FunctionClick />
+      <ClassClick />
+      <EventBind />
+      <ParentComponent />
+      <UserGreeting />
+      <NameList />
+      <StyleSheet primary={true} />
+      <Inline />
+      <h1 className='error'>Error</h1>
+      <h1 className={styles.success}>Success</h1>
+      <Form />
+      <LifeCycleA />
+      <FragmentDemo />
+      <Table />
+      <ParentComp />
+      <RefsDemo />
       <FocusInput />
-      {/* <PortalDemo/> */}
-      {/* <ErrorBoundary>
-        <Hero heroName="Batman"/>
-        </ErrorBoundary>
-        <ErrorBoundary>
-        <Hero heroName="Superman"/>
-        </ErrorBoundary>
-        <ErrorBoundary>
-        <Hero heroName="Joker"/>
-        </ErrorBoundary> */}
-       <ClickCounter name='vishwas' />
-      <HoverCounter /> 
+      <PortalDemo />
+      <ErrorBoundary>
+        <Hero heroName="Batman" />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Hero heroName="Superman" />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <Hero heroName="Joker" />
+      </ErrorBoundary>
+      <ClickCounter name='vishwas' />
+      <HoverCounter />
       <UserProvider value='vishwas'>
-        <ComponentC/>
+        <ComponentC />
       </UserProvider>
-      {/* <PostList/> */}
-      <PostForm/>
-    
+      <PostList />
+      <PostForm /> */}
+      <HookCounter />
+
     </div>
   );
 }
