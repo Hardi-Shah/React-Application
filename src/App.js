@@ -33,6 +33,13 @@ import { UserProvider } from './components/userContext';
 import { PostList } from './components/PostList';
 import { PostForm } from './components/PostForm';
 import HookCounter from './hooks/HookCounter';
+import HookCounterTwo from './hooks/HookCounterTwo';
+import HookCounterThree from './hooks/HookCounterThree';
+import HookCounterFour from './hooks/HookCounterFour';
+import UseEffectCounter from './hooks/UseEffectCounter';
+import HookMouse from './hooks/HookMouse';
+import MouseContainer from './hooks/MouseContainer';
+
 
 function App() {
   return (
@@ -79,6 +86,12 @@ function App() {
       <PostList />
       <PostForm /> */}
       <HookCounter />
+      <HookCounterTwo/>
+      <HookCounterThree/>
+      <HookCounterFour/>
+      <UseEffectCounter/>
+      {/* <HookMouse/> */}
+      <MouseContainer/>
 
     </div>
   );
