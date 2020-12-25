@@ -1,3 +1,4 @@
+import React from 'react'
 import logo from './logo.svg';
 import './App.css';
 import { Greet } from './components/Greet';
@@ -39,7 +40,12 @@ import HookCounterFour from './hooks/HookCounterFour';
 import UseEffectCounter from './hooks/UseEffectCounter';
 import HookMouse from './hooks/HookMouse';
 import MouseContainer from './hooks/MouseContainer';
+import IntervalHookCounter from './hooks/IntervalHookCounter';
+import DataFetching from './hooks/DataFetching';
+import Componentc from './hooks/Componentc';
 
+export const UserContext = React.createContext()
+export const ChannelContext = React.createContext()
 
 function App() {
   return (
@@ -85,13 +91,21 @@ function App() {
       </UserProvider>
       <PostList />
       <PostForm /> */}
-      <HookCounter />
+
+      {/* <HookCounter />
       <HookCounterTwo/>
       <HookCounterThree/>
       <HookCounterFour/>
       <UseEffectCounter/>
-      {/* <HookMouse/> */}
-      <MouseContainer/>
+       <HookMouse/> 
+      <MouseContainer/> 
+      <IntervalHookCounter/>
+      <DataFetching/>*/}
+      <UserContext.Provider value={'vishwas'} >
+        <ChannelContext.Provider value={'codeevolution'} >
+          <Componentc />
+        </ChannelContext.Provider>
+      </UserContext.Provider>
 
     </div>
   );
