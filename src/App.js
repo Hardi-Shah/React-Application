@@ -50,6 +50,10 @@ import DataFetchingOne from './hooks/DataFetchingOne';
 import ParentHookComponent from './hooks/ParentHookComponent';
 import CounterHook from './hooks/CounterHook';
 import FocusInputRef from './hooks/FocusInputRef';
+import HookTimer from './hooks/HookTimer';
+import DocTitleone from './hooks/DocTitleOne';
+import CustomCount from './hooks/CustomCount';
+import UserForm from './hooks/UserForm';
 
 export const UserContext = React.createContext()
 export const ChannelContext = React.createContext()
@@ -119,6 +123,10 @@ function App() {
       <ParentHookComponent />*/}
       <CounterHook />
       <FocusInputRef />
+      <HookTimer/>
+      <DocTitleone/>
+      <CustomCount/>
+      <UserForm/>
     </div>
 
   );
