@@ -33,6 +33,7 @@ import ComponentC from './components/ComponentC';
 import { UserProvider } from './components/userContext';
 import { PostList } from './components/PostList';
 import { PostForm } from './components/PostForm';
+
 import HookCounter from './hooks/HookCounter';
 import HookCounterTwo from './hooks/HookCounterTwo';
 import HookCounterThree from './hooks/HookCounterThree';
@@ -43,6 +44,12 @@ import MouseContainer from './hooks/MouseContainer';
 import IntervalHookCounter from './hooks/IntervalHookCounter';
 import DataFetching from './hooks/DataFetching';
 import Componentc from './hooks/Componentc';
+import CounterTwo from './hooks/CounterTwo';
+import CounterOne from './hooks/CounterOne';
+import DataFetchingOne from './hooks/DataFetchingOne';
+import ParentHookComponent from './hooks/ParentHookComponent';
+import CounterHook from './hooks/CounterHook';
+import FocusInputRef from './hooks/FocusInputRef';
 
 export const UserContext = React.createContext()
 export const ChannelContext = React.createContext()
@@ -100,14 +107,20 @@ function App() {
        <HookMouse/> 
       <MouseContainer/> 
       <IntervalHookCounter/>
-      <DataFetching/>*/}
+      <DataFetching/>
       <UserContext.Provider value={'vishwas'} >
         <ChannelContext.Provider value={'codeevolution'} >
           <Componentc />
         </ChannelContext.Provider>
       </UserContext.Provider>
-
+       <CounterTwo /> 
+      <CounterOne />
+      <DataFetchingOne />
+      <ParentHookComponent />*/}
+      <CounterHook />
+      <FocusInputRef />
     </div>
+
   );
 }
 export default App;
