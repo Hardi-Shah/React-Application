@@ -3,18 +3,18 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 const AddTodo= () => {
     let history = useHistory();
-    const [user, setUser] = useState({
+    const [todo, setTodo] = useState({
         title: ""
     });
     const onInputChange = e => {
-        setUser({ ...user, [e.target.name]: e.target.value })
+        setTodo({ ...todo, [e.target.name]: e.target.value })
     };
     const onSubmit = async e => {
         e.preventDefault();
-        await axios.post("http://localhost:3002/todos", user);
+        await axios.post("http://localhost:3002/todos", todo);
         history.push("/");
     }
-    const { title } = user;
+    const { title } = todo;
     return (
         <div className="container">
             <div className="w-75 mx-auto shadow p-5" style={{ marginTop: "35px" }}>

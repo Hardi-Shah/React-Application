@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Home = () => {
-    const [users, setUser] = useState([]);
+    const [todos, setTodos] = useState([]);
 
     useEffect(() => {
         loadUsers();
@@ -11,7 +11,7 @@ const Home = () => {
 
     const loadUsers = async () => {
         const result = await axios.get("http://localhost:3002/todos");
-        setUser(result.data.reverse());
+        setTodos(result.data.reverse());
 
     };
     const deleteUser = async id => {
@@ -32,13 +32,13 @@ const Home = () => {
                         </tr>
                     </thead>
                     <tbody >
-                        {users.map((user, index) => (
-                            <tr key={user.id}>
+                        {todos.map((todo, index) => (
+                            <tr key={todo.id}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{user.title}</td>
-                                <td><Link className="btn btn-primary mr-2" to={`/todos/${user.id}`}>View</Link>
-                                    <Link className="btn btn-outline-primary mr-2" to={`/todos/edit/${user.id}`}>Edit</Link>
-                                    <Link className="btn btn-danger" to="" onClick={() => deleteUser(user.id)}>Delete</Link>
+                                <td>{todo.title}</td>
+                                <td><Link className="btn btn-primary mr-2" to={`/todos/${todo.id}`}>View</Link>
+                                    <Link className="btn btn-outline-primary mr-2" to={`/todos/edit/${todo.id}`}>Edit</Link>
+                                    <Link className="btn btn-danger" to="" onClick={() => deleteUser(todo.id)}>Delete</Link>
                                 </td>
                             </tr>
                         ))}
