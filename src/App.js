@@ -55,13 +55,23 @@ import DocTitleone from './hooks/DocTitleOne';
 import CustomCount from './hooks/CustomCount';
 import UserForm from './hooks/UserForm';
 
+
+import Navbar from './components/crudapp/layout/Navbar';
+import Home from './components/crudapp/pages/Home';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import AddTodo from './components/crudapp/todos/AddTodo';
+import EditTodo from './components/crudapp/todos/EditTodo';
+import Todo from './components/crudapp/todos/Todo';
+
 export const UserContext = React.createContext()
 export const ChannelContext = React.createContext()
 
 function App() {
   return (
-    <div className="App">
-      {/* <Greet name="abc">
+    <Router>
+      <div className="App">
+        {/* <Greet name="abc">
         <p>Greet tag</p>
       </Greet>
       <Welcome name="abc" />
@@ -103,7 +113,7 @@ function App() {
       <PostList />
       <PostForm /> */}
 
-      {/* <HookCounter />
+        {/* <HookCounter />
       <HookCounterTwo/>
       <HookCounterThree/>
       <HookCounterFour/>
@@ -120,14 +130,23 @@ function App() {
        <CounterTwo /> 
       <CounterOne />
       <DataFetchingOne />
-      <ParentHookComponent />*/}
+      <ParentHookComponent />
       <CounterHook />
       <FocusInputRef />
       <HookTimer/>
       <DocTitleone/>
       <CustomCount/>
-      <UserForm/>
-    </div>
+      <UserForm/>*/}
+
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/todos/add" component={AddTodo} />
+          <Route exact path="/todos/edit/:id" component={EditTodo} />
+          <Route exact path="/todos/:id" component={Todo} />
+        </Switch>
+      </div>
+    </Router>
 
   );
 }
