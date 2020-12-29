@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container">
-                <Link className="navbar-brand" to="">React User</Link>
+                <Link className="navbar-brand" to="">React Todo</Link>
                 <button className="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -18,7 +18,7 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
-            <Link className="btn btn-outline-light" to="/todos/add">Add User</Link>
+            <Link className="btn btn-outline-light" to="/todos/add">Add Todo</Link>
         </nav>
     );
 };

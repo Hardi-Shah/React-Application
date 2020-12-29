@@ -9,10 +9,10 @@ const Todo = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        loadUser();
+        loadTodo();
     }, []);
 
-    const loadUser = async () => {
+    const loadTodo = async () => {
         const res = await axios.get(`http://localhost:3002/todos/${id}`);
         setTodo(res.data);
     };

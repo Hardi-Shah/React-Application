@@ -12,7 +12,7 @@ const EditTodo = () => {
     };
 
     useEffect(() => {
-        loadUser();
+        loadTodo();
     }, []);
 
     const onSubmit = async e => {
@@ -21,7 +21,7 @@ const EditTodo = () => {
         history.push("/");
     };
 
-    const loadUser = async () => {
+    const loadTodo = async () => {
         const result = await axios.get(`http://localhost:3002/todos/${id}`);
         setTodo(result.data);
     };
@@ -29,20 +29,20 @@ const EditTodo = () => {
     const { title } = todo;
     return (
         <div className="container">
-            <div className="w-75 mx-auto shadow p-5" style={{ marginTop: "35px" }}>
-                <h2 className="text-center mb-4">Edit A User</h2>
+            <div className="w-75 mx-auto shadow p-5" style={{ marginTop: "80px" }}>
+                <h2 className="text-center mb-4">Edit A Todo</h2>
                 <form onSubmit={e => onSubmit(e)}>
                     <div className="form-group">
                         <input
                             type="text"
                             className="form-control form-control-lg"
-                            placeholder="Enter Title"
+                            placeholder="Freaking Todo"
                             name="title"
                             value={title}
                             onChange={e => onInputChange(e)}
                         />
                     </div>              
-                    <button className="btn btn-warning btn-block">Edit User</button>
+                    <button className="btn btn-warning btn-block">Edit Todo</button>
                 </form>
             </div>
         </div>

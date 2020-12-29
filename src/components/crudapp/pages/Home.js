@@ -6,23 +6,27 @@ const Home = () => {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-        loadUsers();
+        loadTodos();
     }, []);
 
-    const loadUsers = async () => {
+    const loadTodos = async () => {
         const result = await axios.get("http://localhost:3002/todos");
         setTodos(result.data.reverse());
+        console.log(result);
 
     };
-    const deleteUser = async id => {
+    const deleteTodo = async id => {
         await axios.delete(`http://localhost:3002/todos/${id}`);
-        loadUsers();
+        loadTodos();
+    }
+    function completeTodo(index) {      
+       todos[index].completed =  !todos[index].completed;
     }
 
     return (
         <div className="container">
             <div className="py-4">
-                <h1>Home Page</h1>
+                <h1>Todo List</h1>
                 <table className="table border shadow">
                     <thead className="thead-dark">
                         <tr>
@@ -35,10 +39,12 @@ const Home = () => {
                         {todos.map((todo, index) => (
                             <tr key={todo.id}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{todo.title}</td>
-                                <td><Link className="btn btn-primary mr-2" to={`/todos/${todo.id}`}>View</Link>
+                                <td style={{ textDecoration: todo.completed ? 'line-through' : "" }}>{todo.title}</td>
+                                <td>
+                                    <Link className="btn btn-primary mr-2" to={`/todos/${todo.id}`}>View</Link>
                                     <Link className="btn btn-outline-primary mr-2" to={`/todos/edit/${todo.id}`}>Edit</Link>
-                                    <Link className="btn btn-danger" to="" onClick={() => deleteUser(todo.id)}>Delete</Link>
+                                    <Link className="btn btn-danger mr-2" to="" onClick={() => deleteTodo(todo.id)}>Delete</Link>
+                                    <Link className="btn btn-outline-primary" to="" onClick={() => completeTodo(index)}>complete</Link>
                                 </td>
                             </tr>
                         ))}
