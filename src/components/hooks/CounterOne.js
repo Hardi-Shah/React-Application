@@ -1,5 +1,5 @@
 import React, { useReducer ,useContext} from 'react'
-import {CountContext} from '../App';
+//import {CountContext} from '../App';
 const initialSate = 0
 const reducer = (state, action) => {
     switch (action) {

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
-import { UserContext, ChannelContext } from '../App';
+//import { UserContext, ChannelContext } from '../App';
 function ComponentE() {
-    // const user = useContext(UserContext)
-    // const channel = useContext(ChannelContext)
+     //const user = useContext(UserContext)
+     //const channel = useContext(ChannelContext)
     return (
         <div>
             {/* {user}-{channel} */}
-            <UserContext.Consumer>
+            {/* <UserContext.Consumer>
                 {
                     user => {
                         return (
@@ -20,8 +20,8 @@ function ComponentE() {
                         )
                     }
                 }
-            </UserContext.Consumer>
-        </div>
+            </UserContext.Consumer>*/}
+        </div> 
     )
 }
 export default ComponentE
