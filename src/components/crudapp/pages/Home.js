@@ -19,8 +19,8 @@ const Home = () => {
         await axios.delete(`http://localhost:3002/todos/${id}`);
         loadTodos();
     }
-    function completeTodo(index) {      
-       todos[index].completed =  !todos[index].completed;
+    function completeTodo(index) {
+        todos[index].completed = !todos[index].completed;
     }
 
     return (
