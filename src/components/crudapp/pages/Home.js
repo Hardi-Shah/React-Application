@@ -41,10 +41,10 @@ const Home = () => {
                                 <th scope="row">{index + 1}</th>
                                 <td style={{ textDecoration: todo.completed ? 'line-through' : "" }}>{todo.title}</td>
                                 <td>
-                                    <Link className="btn btn-primary mr-2" to={`/todos/${todo.id}`}>View</Link>
-                                    <Link className="btn btn-outline-primary mr-2" to={`/todos/edit/${todo.id}`}>Edit</Link>
-                                    <Link className="btn btn-danger mr-2" to="" onClick={() => deleteTodo(todo.id)}>Delete</Link>
-                                    <Link className="btn btn-outline-primary" to="" onClick={() => completeTodo(index)}>complete</Link>
+                                    <Link className="btn fa fa-eye  btn-primary mr-2" to={`/todos/${todo.id}`}>View</Link>
+                                    <Link className="btn btn-outline-primary mr-2" to={`/todos/edit/${todo.id}`}> Edit</Link>
+                                    <Link className="btn  btn-danger mr-2" to="" onClick={() => deleteTodo(todo.id)}> Delete</Link>
+                                    <Link className="btn  btn-outline-primary" to="" onClick={() => completeTodo(index)}>Complete</Link>
                                 </td>
                             </tr>
                         ))}
