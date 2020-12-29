@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-export class ClassClick extends Component{
+ class ClassClick extends Component{
     cllickHandler(){
         console.log('click event')
     }
@@ -11,3 +11,4 @@ export class ClassClick extends Component{
         );
     }
 }
+export default ClassClick
