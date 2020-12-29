@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+import {  useParams } from "react-router-dom";
+import { getTodoServiceById } from "../../../services/TodoService";
 
 const Todo = () => {
     const [todo, setTodo] = useState({
@@ -13,7 +13,7 @@ const Todo = () => {
     }, []);
 
     const loadTodo = async () => {
-        const res = await axios.get(`http://localhost:3002/todos/${id}`);
+        const res = await  getTodoServiceById(id);
         setTodo(res.data);
     };
     return (

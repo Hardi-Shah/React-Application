@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import axios from "axios";
 import './todo.css';
+import { editTodoService, getTodoServiceById } from "../../../services/TodoService";
 
 const EditTodo = () => {
     let history = useHistory();
     const { id } = useParams();
     const [todo, setTodo] = useState({
-       title:""
+        title: ""
+
     });
     const onInputChange = e => {
         setTodo({ ...todo, [e.target.name]: e.target.value })
@@ -19,13 +20,16 @@ const EditTodo = () => {
 
     const onSubmit = async e => {
         e.preventDefault();
-        await axios.put(`http://localhost:3002/todos/${id}`, todo);
+        await editTodoService(id, todo)
         history.push("/");
     };
 
     const loadTodo = async () => {
-        const result = await axios.get(`http://localhost:3002/todos/${id}`);
-        setTodo(result.data);
+        await getTodoServiceById(id)
+            .then(res => setTodo(res.data))
+            .catch(err => {
+                history.push("/NotFound");
+            })
     };
 
     const { title } = todo;
@@ -43,7 +47,7 @@ const EditTodo = () => {
                             value={title}
                             onChange={e => onInputChange(e)}
                         />
-                    </div>              
+                    </div>
                     <button className="btn btn-warning btn-block">Edit Todo</button>
                 </form>
             </div>
@@ -51,4 +55,4 @@ const EditTodo = () => {
     )
 };
 
-export default EditTodo;
+export default EditTodo

@@ -63,6 +63,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import AddTodo from './components/crudapp/todos/AddTodo';
 import EditTodo from './components/crudapp/todos/EditTodo';
 import Todo from './components/crudapp/todos/Todo';
+import NotFound from './components/crudapp/pages/NotFound';
 
 export const UserContext = React.createContext()
 export const ChannelContext = React.createContext()
@@ -144,6 +145,7 @@ function App() {
           <Route exact path="/todos/add" component={AddTodo} />
           <Route exact path="/todos/edit/:id" component={EditTodo} />
           <Route exact path="/todos/:id" component={Todo} />
+          <Route exact path="/NotFound" component={NotFound} />
         </Switch>
       </div>
     </Router>

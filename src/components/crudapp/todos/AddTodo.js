@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
 import './todo.css';
+import { addTodoService } from "../../../services/TodoService";
 
 const AddTodo = () => {
     let history = useHistory();
@@ -13,7 +13,7 @@ const AddTodo = () => {
     };
     const onSubmit = async e => {
         e.preventDefault();
-        await axios.post("http://localhost:3002/todos", todo);
+        await addTodoService(todo)
         history.push("/");
     }
     const { title } = todo;

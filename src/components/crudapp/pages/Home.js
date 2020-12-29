@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import { getTodoService,deleteTodoServiceById } from "../../../services/TodoService";
 
 const Home = () => {
     const [todos, setTodos] = useState([]);
@@ -10,12 +10,12 @@ const Home = () => {
     }, []);
 
     const loadTodos = async () => {
-        const result = await axios.get("http://localhost:3002/todos");
+        const result = await getTodoService()
         setTodos(result.data.reverse());
 
     };
     const deleteTodo = async id => {
-        await axios.delete(`http://localhost:3002/todos/${id}`);
+        await deleteTodoServiceById(id)
         loadTodos();
     }
     function completeTodo(index) {
