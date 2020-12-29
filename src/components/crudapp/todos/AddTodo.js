@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import './todo.css';
+
 const AddTodo = () => {
     let history = useHistory();
     const [todo, setTodo] = useState({
@@ -17,7 +19,7 @@ const AddTodo = () => {
     const { title } = todo;
     return (
         <div className="container">
-            <div className="w-75 mx-auto shadow p-5" style={{ marginTop: "80px" }}>
+            <div className="w-75 mx-auto shadow p-5 AddStyle" >
                 <h2 className="text-center mb-4">Add A Todo</h2>
                 <form onSubmit={e => onSubmit(e)}>
                     <div className="form-group">
