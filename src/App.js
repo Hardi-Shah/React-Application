@@ -13,11 +13,12 @@ import AddTodo from './components/crudapp/todos/AddTodo';
 import EditTodo from './components/crudapp/todos/EditTodo';
 import Todo from './components/crudapp/todos/Todo';
 import NotFound from './components/crudapp/pages/NotFound';
-
+import {theme,ThemeProvider} from '@chakra-ui/react'
 
 function App() {
   return (
     // <Router>
+    <ThemeProvider theme={theme}>
     <div className="App">
       {/* <Demo /> */}
       <Formik/>
@@ -30,6 +31,7 @@ function App() {
           <Route exact path="/NotFound" component={NotFound} />
         </Switch> */}
     </div>
+    </ThemeProvider>
     //</Router>
   );
 }
