@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import {  useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { getUserServiceById } from "../../../services/UserService";
 
 const User = () => {
@@ -19,6 +19,7 @@ const User = () => {
         const res = await  getUserServiceById(id);
         setUser(res.data);
     };
+   
     return (
         <div className="container py-4">
 
