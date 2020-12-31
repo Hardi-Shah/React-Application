@@ -45,8 +45,7 @@ function FormikContainer() {
         <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={onSubmit}
-        >
+            onSubmit={onSubmit}>
             {formik => (
                 <Form>
                     <FormikControl
