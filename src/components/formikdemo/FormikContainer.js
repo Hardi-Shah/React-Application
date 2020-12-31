@@ -83,7 +83,7 @@ function FormikContainer() {
                         label='Pick a date'
                         name='birthDate'
                     />
-                    <button type='submit'>Submit</button>
+                    <button type='submit' disabled={!formik.isValid}>Submit</button>
                 </Form>
             )}
         </Formik>
