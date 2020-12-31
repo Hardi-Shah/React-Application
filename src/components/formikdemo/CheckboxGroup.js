@@ -26,7 +26,7 @@ function CheckboxGroup (props) {
           })
         }}
       </Field>
-      <ErrorMessage component={TextError} name={name} />
+      <ErrorMessage name={name}  component={TextError} />
     </div>
   )
 }
