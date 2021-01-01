@@ -60,7 +60,7 @@
       "email": "riya261@gmail.com",
       "password": "ryk261",
       "confirmPassword": "ryk261",
-      "phone": "3345456123"
+      "phone": "9245456123"
     },
     {
       "id": 2,
@@ -70,7 +70,7 @@
       "email": "radhika158@gmail.com",
       "password": "rdh158",
       "confirmPassword": "rdh158",
-      "phone": "3345456123"
+      "phone": "9845456123"
     },
     {
       "id": 3,
@@ -80,7 +80,7 @@
       "email": "arha217@gmail.com",
       "password": "arh217",
       "confirmPassword": "arh217",
-      "phone": "5565712123"
+      "phone": "9565712123"
     },
     {
       "id": 4,
@@ -90,7 +90,7 @@
       "email": "kenil312@gmail.com",
       "password": "knl312",
       "confirmPassword": "knl312",
-      "phone": "5455442132"
+      "phone": "9455442132"
     },
     {
       "id": 5,
@@ -101,16 +101,6 @@
       "password": "dyp235",
       "confirmPassword": "dyp235",
       "phone": "9823452674"
-    },
-    {
-      "firstname": "sad",
-      "lastname": "ssdds",
-      "username": "radhika246",
-      "password": "asd123",
-      "confirmPassword": "asd123",
-      "email": "hghnh223@gmail.us",
-      "phone": "12232321",
-      "id": 6
     }
   ]
 }

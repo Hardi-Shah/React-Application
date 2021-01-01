@@ -69,37 +69,37 @@ const EditUser = (props) => {
                             <Form>
                                 <div >
                                     <label>First Name</label>
-                                    <Field name="firstname" type="text" value={firstname} onChange={e => onInputChange(e)} />
+                                    <Field name="firstname" type="text" value={firstname} onChange={e => onInputChange(e)} placeholder='Enter Your First Name'/>
                                     <ErrorMessage name="firstname" component={TextError} />
                                 </div>
                                 <div >
                                     <label>Last Name</label>
-                                    <Field name="lastname" type="text" value={lastname} onChange={e => onInputChange(e)} />
+                                    <Field name="lastname" type="text" value={lastname} onChange={e => onInputChange(e)} placeholder='Enter Your Last Name' />
                                     <ErrorMessage name="lastname" component={TextError} />
                                 </div>
                                 <div>
                                     <label>User Name</label>
-                                    <Field name="username" type="text" value={username} onChange={e => onInputChange(e)} />
+                                    <Field name="username" type="text" value={username} onChange={e => onInputChange(e)} placeholder='Enter Your User Name'/>
                                     <ErrorMessage name="username" component={TextError} />
                                 </div>
                                 <div>
                                     <label>Email </label>
-                                    <Field name="email" type="email" value={email} onChange={e => onInputChange(e)} />
+                                    <Field name="email" type="email" value={email} onChange={e => onInputChange(e)} placeholder='Enter Your Email Address' />
                                     <ErrorMessage name="email" component={TextError} />
                                 </div>
                                 <div >
                                     <label>Password</label>
-                                    <Field name="password" type="text" value={password} onChange={e => onInputChange(e)} />
+                                    <Field name="password" type="text" value={password} onChange={e => onInputChange(e)} placeholder='Enter Your Password'/>
                                     <ErrorMessage name="password" component={TextError} />
                                 </div>
                                 <div >
                                     <label>Confirm Password</label>
-                                    <Field name="confirmPassword" type="text" value={confirmPassword} onChange={e => onInputChange(e)} />
+                                    <Field name="confirmPassword" type="text" value={confirmPassword} onChange={e => onInputChange(e)} placeholder=' Enter Your Confirm Password' />
                                     <ErrorMessage name="confirmPassword" component={TextError} />
                                 </div>
                                 <div >
                                     <label>PhoneNo.</label>
-                                    <Field id="phone" name="phone" type="text" value={phone} onChange={e => onInputChange(e)} />
+                                    <Field id="phone" name="phone" type="text" value={phone} onChange={e => onInputChange(e)} placeholder='Enter Your PhoneNo.'/>
                                     <ErrorMessage name="phone" component={TextError} />
                                 </div>
                                 <button type='submit' disabled={!formik.isValid} className="btn btn-primary btn-block ">Edit User</button>

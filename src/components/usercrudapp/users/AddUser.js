@@ -43,37 +43,37 @@ const AddUser = () => {
                             <Form>
                                 <div >
                                     <label>First Name</label>
-                                    <Field name="firstname" type="text" />
+                                    <Field name="firstname" type="text" placeholder='Enter Your First Name' />
                                     <ErrorMessage name="firstname" component={TextError} />
                                 </div>
                                 <div >
                                     <label>Last Name</label>
-                                    <Field name="lastname" type="text" />
+                                    <Field name="lastname" type="text" placeholder='Enter Your Last Name' />
                                     <ErrorMessage name="lastname" component={TextError} />
                                 </div>
                                 <div >
                                     <label>User Name</label>
-                                    <Field name="username" type="text" />
+                                    <Field name="username" type="text" placeholder='Enter Your User Name'/>
                                     <ErrorMessage name="username" component={TextError} />
                                 </div>
                                 <div >
                                     <label>Email </label>
-                                    <Field name="email" type="email" />
+                                    <Field name="email" type="email" placeholder='Enter Your Email Address' />
                                     <ErrorMessage name="email" component={TextError} />
                                 </div>
                                 <div >
                                     <label>Password</label>
-                                    <Field name="password" type="password" />
+                                    <Field name="password" type="password" placeholder='Enter Your Password' />
                                     <ErrorMessage name="password" component={TextError} />
                                 </div>
                                 <div >
                                     <label>Confirm Password</label>
-                                    <Field name="confirmPassword" type="password" />
+                                    <Field name="confirmPassword" type="password" placeholder=' Enter Your Confirm Password'/>
                                     <ErrorMessage name="confirmPassword" component={TextError} />
                                 </div>
                                 <div >
                                     <label>PhoneNo.</label>
-                                    <Field name="phone" type="text" />
+                                    <Field name="phone" type="text" placeholder='Enter Your PhoneNo.' />
                                     <ErrorMessage name="phone" component={TextError} />
                                 </div>
                                 <button type='submit' disabled={!formik.isValid} className="btn btn-primary btn-block">Add User</button>
