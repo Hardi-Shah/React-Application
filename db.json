@@ -54,38 +54,63 @@
   "users": [
     {
       "id": 1,
-      "name": "riya",
+      "firstname": "riya",
+      "lastname": "kothari",
+      "username": "riya261",
       "email": "riya261@gmail.com",
-      "address": "221b baker street",
+      "password": "ryk261",
+      "confirmPassword": "ryk261",
       "phone": "3345456123"
     },
     {
       "id": 2,
-      "name": "radhika",
+      "firstname": "radhika",
+      "lastname": "vora",
+      "username": "radhika158",
       "email": "radhika158@gmail.com",
-      "address": "343b ashok street",
+      "password": "rdh158",
+      "confirmPassword": "rdh158",
       "phone": "3345456123"
     },
     {
       "id": 3,
-      "name": "arha",
+      "firstname": "arha",
+      "lastname": "sheth",
+      "username": "arha217",
       "email": "arha217@gmail.com",
-      "address": "676d mahavir street",
+      "password": "arh217",
+      "confirmPassword": "arh217",
       "phone": "5565712123"
     },
     {
       "id": 4,
-      "name": "kenil",
+      "firstname": "kenil",
+      "lastname": "shah",
+      "username": "kenil312",
       "email": "kenil312@gmail.com",
-      "address": "562k shakti street",
+      "password": "knl312",
+      "confirmPassword": "knl312",
       "phone": "5455442132"
     },
     {
       "id": 5,
-      "name": "diya",
+      "firstname": "diya",
+      "lastname": "patel",
+      "username": "diya235",
       "email": "diya235@gmail.com",
-      "address": "232c nutan street",
-      "phone": "3443554625"
+      "password": "dyp235",
+      "confirmPassword": "dyp235",
+      "phone": "9823452674"
+    },
+    {
+      "firstname": "sad",
+      "lastname": "ssdds",
+      "username": "radhika246",
+      "password": "asd123",
+      "confirmPassword": "asd123",
+      "email": "hghnh223@gmail.us",
+      "phone": "12232321",
+      "id": 6
     }
   ]
 }

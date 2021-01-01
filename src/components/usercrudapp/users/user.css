@@ -1,6 +1,11 @@
 .AddStyle{
-    margin-Top: 80px
+    margin-Top: 60px;
+    margin-bottom: 50px;
 }
 .EditStyle{
-    margin-Top: 80px
+    margin-Top: 60px;
+    margin-bottom: 50px;
+}
+.heading{
+    text-align: center;
 }

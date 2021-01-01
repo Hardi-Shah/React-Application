@@ -22,15 +22,15 @@ const Home = () => {
     return (
         <div className="container">
             <div className="py-4">
-                <h1>User List</h1>
-                <table className="table border shadow">
+                <h1 className="heading">User List</h1>
+                <table className="table table-striped border shadow">
                     <thead className="thead-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Name</th>
+                            <th scope="col">FullName</th>
+                            <th scope="col">UserName</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Phone</th>
+                            <th scope="col">PhoneNo.</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -38,9 +38,9 @@ const Home = () => {
                         {users.map((user, index) => (
                             <tr key={user.id}>
                                 <th scope="row">{index + 1}</th>
-                                <td>{user.name}</td>
+                                <td>{`${user.firstname}${user.lastname}`}</td>
+                                <td>{user.username}</td>
                                 <td>{user.email}</td>
-                                <td>{user.address}</td>
                                 <td>{user.phone}</td>
                                 <td>
                                     <Link className="btn fa fa-eye  btn-primary mr-2" to={`/users/${user.id}`}>View</Link>

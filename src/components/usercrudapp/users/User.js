@@ -3,10 +3,14 @@ import { useHistory, useParams } from "react-router-dom";
 import { getUserServiceById } from "../../../services/UserService";
 
 const User = () => {
+    let history = useHistory();
     const [user, setUser] = useState({
-        name: "",
+        firstname: "",
+        lastname: "",
+        username: "",
+        password: "",
+        confirmPassword: "",
         email: "",
-        address: "",
         phone: ""
     });
     const { id } = useParams();
@@ -16,8 +20,11 @@ const User = () => {
     }, []);
 
     const loadUser = async () => {
-        const res = await getUserServiceById(id);
-        setUser(res.data);
+        await getUserServiceById(id)
+            .then(res => setUser(res.data))
+            .catch(err => {
+                history.push("/NotFound");
+            })
     };
 
     return (
@@ -25,9 +32,12 @@ const User = () => {
             <h1 className="display-4">User Id: {id}</h1>
             <hr />
             <ul className="list-group w-50">
-                <li className="list-group-item">Name: {user.name}</li>
+                <li className="list-group-item">FirstName: {user.firstname}</li>
+                <li className="list-group-item">LastName: {user.lastname}</li>
+                <li className="list-group-item">UserName: {user.username}</li>
+                <li className="list-group-item">Password: {user.password}</li>
+                <li className="list-group-item">ConfirmPassword: {user.confirmPassword}</li>
                 <li className="list-group-item">Email: {user.email}</li>
-                <li className="list-group-item">Address: {user.address}</li>
                 <li className="list-group-item">PhoneNo.: {user.phone}</li>
             </ul>
         </div>

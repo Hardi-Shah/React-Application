@@ -1,66 +1,87 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
 import './user.css';
 import { addUserService } from "../../../services/UserService";
+import TextError from "../../formikdemo/TextError";
 
 const AddUser = () => {
     let history = useHistory();
-    const [user, setUser] = useState({
-        name: "",
+    const initialValues = {
+        firstname: "",
+        lastname: "",
+        username: "",
+        password: "",
+        confirmPassword: "",
         email: "",
-        address: "",
         phone: ""
-    });
-    const onInputChange = e => {
-        setUser({ ...user, [e.target.name]: e.target.value })
     };
-    const onSubmit = async e => {
-        e.preventDefault();
-        await addUserService(user)
+    const validationSchema = Yup.object({
+        firstname: Yup.string().required('FirstName is Reuired'),
+        lastname: Yup.string().required('LastName is Reuired'),
+        username: Yup.string().required(' UserName is Reuired'),
+        email: Yup.string().email('Invalid Email Format').required('Email is Reuired'),
+        password: Yup.string().min(6, 'Password is too short - should be 6 chars minimum.').required('Password is Reuired'),
+        confirmPassword: Yup.string().oneOf([Yup.ref('password'), ''], 'password must match').required(' Confirm Password is Reuired'),
+        phone: Yup.number().typeError('Please Enter only Numeric Value').integer("A phone number can't include a decimal point").min(10, "Min 10 digit is Required").required(' PhoneNo. is Required')
+    })
+    const onSubmit = async values => {
+        await addUserService(values)
         history.push("/");
     }
-    const { name, email, address, phone } = user;
+
     return (
         <div className="container">
             <div className="w-75 mx-auto shadow p-5 AddStyle" >
                 <h2 className="text-center mb-4">Add A User</h2>
-                <form onSubmit={e => onSubmit(e)}>
-                    <div className="form-group">
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Enter Your Name"
-                            name="name"
-                            value={name}
-                            onChange={e => onInputChange(e)}
-                        />
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Enter Your Email-Address"
-                            name="email"
-                            value={email}
-                            onChange={e => onInputChange(e)}
-                        />
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Enter Your Address"
-                            name="address"
-                            value={address}
-                            onChange={e => onInputChange(e)}
-                        />
-                        <input
-                            type="text"
-                            className="form-control form-control-lg"
-                            placeholder="Enter Your PhoneNo."
-                            name="phone"
-                            value={phone}
-                            onChange={e => onInputChange(e)}
-                        />
-                    </div>
-                    <button className="btn btn-primary btn-block">Add User</button>
-                </form>
+                <Formik initialValues={initialValues}
+                    onSubmit={onSubmit}
+                    validationSchema={validationSchema}>
+                    {
+                        formik => (
+                            <Form>
+                                <div >
+                                    <label>First Name</label>
+                                    <Field name="firstname" type="text" />
+                                    <ErrorMessage name="firstname" component={TextError} />
+                                </div>
+                                <div >
+                                    <label>Last Name</label>
+                                    <Field name="lastname" type="text" />
+                                    <ErrorMessage name="lastname" component={TextError} />
+                                </div>
+                                <div >
+                                    <label>User Name</label>
+                                    <Field name="username" type="text" />
+                                    <ErrorMessage name="username" component={TextError} />
+                                </div>
+                                <div >
+                                    <label>Email </label>
+                                    <Field name="email" type="email" />
+                                    <ErrorMessage name="email" component={TextError} />
+                                </div>
+                                <div >
+                                    <label>Password</label>
+                                    <Field name="password" type="password" />
+                                    <ErrorMessage name="password" component={TextError} />
+                                </div>
+                                <div >
+                                    <label>Confirm Password</label>
+                                    <Field name="confirmPassword" type="password" />
+                                    <ErrorMessage name="confirmPassword" component={TextError} />
+                                </div>
+                                <div >
+                                    <label>PhoneNo.</label>
+                                    <Field name="phone" type="text" />
+                                    <ErrorMessage name="phone" component={TextError} />
+                                </div>
+                                <button type='submit' disabled={!formik.isValid} className="btn btn-primary btn-block">Add User</button>
+                            </Form>
+                        )
+                    }
+                </Formik>
+
             </div>
         </div>
     )
