@@ -42,12 +42,36 @@ const EditUser = () => {
                 <h2 className="text-center mb-4">Edit A User</h2>
                 <form onSubmit={e => onSubmit(e)}>
                     <div className="form-group">
+                    <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Enter Your Name"
+                            name="name"
+                            value={name}
+                            onChange={e => onInputChange(e)}
+                        />
                         <input
                             type="text"
                             className="form-control form-control-lg"
-                            placeholder="Enter UserName"
-                            name="name"
-                            value={name}
+                            placeholder="Enter Your Email-Address"
+                            name="email"
+                            value={email}
+                            onChange={e => onInputChange(e)}
+                        />
+                        <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Enter Your Address"
+                            name="address"
+                            value={address}
+                            onChange={e => onInputChange(e)}
+                        />
+                        <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Enter Your PhoneNo."
+                            name="phone"
+                            value={phone}
                             onChange={e => onInputChange(e)}
                         />
                     </div>

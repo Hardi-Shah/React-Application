@@ -7,9 +7,9 @@ const AddUser = () => {
     let history = useHistory();
     const [user, setUser] = useState({
         name: "",
-        email:"",
-        address:"",
-        phone:""
+        email: "",
+        address: "",
+        phone: ""
     });
     const onInputChange = e => {
         setUser({ ...user, [e.target.name]: e.target.value })
@@ -19,7 +19,7 @@ const AddUser = () => {
         await addUserService(user)
         history.push("/");
     }
-    const { name,email,address,phone } = user;
+    const { name, email, address, phone } = user;
     return (
         <div className="container">
             <div className="w-75 mx-auto shadow p-5 AddStyle" >
@@ -29,9 +29,33 @@ const AddUser = () => {
                         <input
                             type="text"
                             className="form-control form-control-lg"
-                            placeholder="Enter UserName"
+                            placeholder="Enter Your Name"
                             name="name"
                             value={name}
+                            onChange={e => onInputChange(e)}
+                        />
+                        <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Enter Your Email-Address"
+                            name="email"
+                            value={email}
+                            onChange={e => onInputChange(e)}
+                        />
+                        <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Enter Your Address"
+                            name="address"
+                            value={address}
+                            onChange={e => onInputChange(e)}
+                        />
+                        <input
+                            type="text"
+                            className="form-control form-control-lg"
+                            placeholder="Enter Your PhoneNo."
+                            name="phone"
+                            value={phone}
                             onChange={e => onInputChange(e)}
                         />
                     </div>
