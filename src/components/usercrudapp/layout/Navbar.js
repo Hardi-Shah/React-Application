@@ -3,9 +3,9 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav className="navbar navbar-expand-lg navbar-dark navcolor">
             <div className="container">
-                <Link className="navbar-brand" to="">React User</Link>
+                <Link className="navbar-brand" to=""><img className="img-center" height="80" width="80" src="../images.png"/></Link>
                 <button className="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" data-toggle="collapse" data-target="#navbarSupportedContent">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -13,7 +13,7 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" >
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link" exact to="/">Home</NavLink>
+                            <NavLink className="nav-link" exact to="/">Dashboard</NavLink>
                         </li>
                     </ul>
                 </div>

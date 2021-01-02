@@ -24,7 +24,7 @@ const Home = () => {
             <div className="py-4">
                 <h1 className="heading">User List</h1>
                 <table className="table table-striped border shadow">
-                    <thead className="thead-dark">
+                    <thead className=" tblcolor">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">FullName</th>

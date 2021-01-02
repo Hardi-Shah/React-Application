@@ -8,4 +8,20 @@
 }
 .heading{
     text-align: center;
+    color:rebeccapurple;
+}
+.tblcolor{
+    background-color: darkblue;
+    color:white;
+}
+.navcolor{
+    background-color: darkblue;
+}
+.navbar-brand {
+    margin-top: -12px;
+    margin-bottom: -12px;
+    margin-left: -80px;
+}
+.nav-link{
+    margin-left: 26px;
 }
