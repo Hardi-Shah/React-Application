@@ -6,7 +6,7 @@ import './user.css';
 import { editUserService, getUserServiceById } from "../../../services/UserService";
 import TextError from "../../formikdemo/TextError";
 
-const EditUser = (props) => {
+const EditUser = () => {
     let history = useHistory();
     const { id } = useParams();
     const [user, setUser] = useState({
