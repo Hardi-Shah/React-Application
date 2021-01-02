@@ -4,6 +4,7 @@ import './appStyles.css'
 
 import Demo from './components/Demo';
 import Formik from './components/Formik';
+import UIDemo from './components/UIDemo';
 
 // import Navbar from './components/crudapp/layout/Navbar';
 // import Home from './components/crudapp/pages/Home';
@@ -25,13 +26,17 @@ import NotFound from './components/usercrudapp/pages/NotFound';
 
 import { theme, ThemeProvider } from '@chakra-ui/react'
 
+
 function App() {
   return (
-    <Router>
-      {/* <ThemeProvider theme={theme}> */}
+     <Router>
+      {/* <ThemeProvider theme={theme}>  */}
+
       <div className="App">
         {/* <Demo /> */}
         {/* <Formik/> */}
+        {/* <UIDemo/> */}
+
         {/* <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
@@ -49,9 +54,10 @@ function App() {
           <Route exact path="/users/:id" component={User} />
           <Route exact path="/NotFound" component={NotFound} />
         </Switch>
+
       </div>
-      {/* </ThemeProvider> */}
-    </Router>
-  );
+       {/* </ThemeProvider>  */}
+     </Router> 
+  )
 }
 export default App;
